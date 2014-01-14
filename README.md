@@ -27,8 +27,8 @@ Game.prototype = {
     events: new Events([
         'load game',
         'refresh game',
-	'attack',
-	'attacked'
+        'attack',
+        'attacked'
     ])
 };
 ```
@@ -41,9 +41,7 @@ Setting callbacks for the defined events:
 ```bash
 var game = new Game();
 
-game.on([
-	'load game',
-	'refresh game'], function() {
+game.events.on(['load game', 'refresh game'], function() {
 		console.log('game loaded or refreshed');
 	})
 	.on('attacked', function() {
@@ -54,7 +52,10 @@ game.on([
 Triggering your custom events
 
 ```bash
-game.trigger('attack')
+game.events
+// attack order!
+.trigger('attack')
+
 // triggering an invalid event
 .trigger('invalid event');  // will throw a console warning
 ```

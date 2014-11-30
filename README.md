@@ -1,9 +1,9 @@
 [jQuery](http://jquery.com/) - jQEvents
 =====================================
 
-What is jQEvents?
+What is Events?
 --------------------------------------
-jQEvents is a script that you can bind async custom events into your javascript objects.
+Events is a script that you can bind async custom events into your javascript objects.
 
 
 Dependencies
@@ -14,10 +14,10 @@ jQuery 1.x
 Usage
 ----------------------------
 
-Include jQEvents.js in your project:
+Include Events.js in your project:
 
 ```bash
-<script type="text/javascript" src="js/libraries/jQEvents/jQEvents.js"></script>
+<script type="text/javascript" src="js/libraries/Events/Events.js"></script>
 ```
 
 Prototyping an object and defining its custom events

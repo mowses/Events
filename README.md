@@ -1,4 +1,4 @@
-[jQuery](http://jquery.com/) - jQEvents
+[jQuery](http://jquery.com/) - Events
 =====================================
 
 What is Events?

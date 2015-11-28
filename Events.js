@@ -1,5 +1,7 @@
 (function($) {
 
+    'use strict';
+
     function Events(supported_events) {
         var self = this,
             events = {}

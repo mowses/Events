@@ -26,7 +26,7 @@
                         event_namespace = event_parts.slice(1).join('.');
 
                     if (!events[event_name]) {
-                        console.warn(parent, 'does not support "' + event_name + '" event.');
+                        console.trace(parent, 'does not support "' + event_name + '" event.');
                     } else {
                         if (!events[event_name][event_namespace]) {
                             events[event_name][event_namespace] = [];

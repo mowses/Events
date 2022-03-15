@@ -1,0 +1,19 @@
+{
+  "name": "async-events",
+  "version": "1.0.0",
+  "description": "Events is a script that you can bind async custom events into your javascript objects.",
+  "main": "Events.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mowses/Events.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mowses/Events/issues"
+  },
+  "homepage": "https://github.com/mowses/Events#readme"
+}

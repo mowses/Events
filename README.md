@@ -1,6 +1,3 @@
-[jQuery](http://jquery.com/) - Events
-=====================================
-
 What is Events?
 --------------------------------------
 Events is a script that you can bind async custom events into your javascript objects.
@@ -8,7 +5,7 @@ Events is a script that you can bind async custom events into your javascript ob
 
 Dependencies
 --------------------------------------
-jQuery 1.x
+No dependencies
 
 
 Usage
@@ -16,13 +13,18 @@ Usage
 
 Include Events.js in your project:
 
-```bash
+```html
 <script type="text/javascript" src="js/libraries/Events/Events.js"></script>
+```
+
+or
+```javascript
+const Events = require('./Events.js');
 ```
 
 Prototyping an object and defining its custom events
 
-```bash
+```javascript
 Game.prototype = {
     events: new Events([
         'load game',
@@ -38,24 +40,28 @@ No other events can be bind or triggered if not present in the array above.
 
 Setting callbacks for the defined events:
 
-```bash
+```javascript
 var game = new Game();
 
-game.events.on(['load game', 'refresh game'], function() {
+game.events
+    .on(['load game', 'refresh game'], function() {
 		console.log('game loaded or refreshed');
 	})
-	.on('attacked', function() {
-		console.log('Im hit!');
+	.on('attacked', function(say) {
+		console.log(say);
 	});
 ```
 
 Triggering your custom events
 
-```bash
-game.events
+```javascript
 // attack order!
-.trigger('attack')
+game.events.trigger('attack')
 
 // triggering an invalid event
-.trigger('invalid event');  // will throw a console warning
+game.events.trigger('invalid event');  // will throw a console warning
+
+// passing custom argument to event callback
+game.events.trigger('attacked', 'Ouch, that hurts!')
 ```
+

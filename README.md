@@ -22,6 +22,11 @@ or
 const Events = require('./Events.js');
 ```
 
+or
+```javascript
+import Events from 'async-events';
+```
+
 Prototyping an object and defining its custom events
 
 ```javascript

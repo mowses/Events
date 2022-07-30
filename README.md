@@ -13,18 +13,8 @@ Usage
 
 Include Events.js in your project:
 
-```html
-<script type="text/javascript" src="js/libraries/Events/Events.js"></script>
-```
-
-or
 ```javascript
-const Events = require('./Events.js');
-```
-
-or
-```javascript
-import Events from 'async-events';
+import Events from './Events.js';
 ```
 
 Prototyping an object and defining its custom events

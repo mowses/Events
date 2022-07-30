@@ -63,7 +63,7 @@ const Events = function (supported_events) {
             return parent;
         },
 
-        trigger: function (event, params) {
+        trigger: function (event, ...params) {
             let parent = this,
                 event_parts = event.split('.'),
                 event_name = event_parts[0],
@@ -95,7 +95,7 @@ const Events = function (supported_events) {
             [].forEach.call(callbacks, function (callback) {
                 if (typeof callback !== 'function') return;
 
-                callback.call(parent, params);
+                callback.apply(parent, params);
             });
 
             return parent;

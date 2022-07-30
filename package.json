@@ -1,5 +1,5 @@
 {
-  "name": "async-events",
+  "name": "@mowses/events",
   "version": "1.0.0",
   "description": "Events is a script that you can bind async custom events into your javascript objects.",
   "main": "Events.js",

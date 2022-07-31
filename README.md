@@ -8,6 +8,13 @@ Dependencies
 No dependencies
 
 
+Installation
+--------------------------------------
+```sh
+npm i https://github.com/mowses/Events
+```
+
+
 Usage
 ----------------------------
 
@@ -20,13 +27,12 @@ import Events from '@mowses/Events';
 Defining an object and its custom events:
 
 ```javascript
-const Game = function ()
-{
+const Game = function () {
     this.events = new Events([
         'load game',
         'refresh game',
         'attack',
-        'attacked'
+        'attacked',
     ]);
 }
 ```

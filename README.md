@@ -1,6 +1,6 @@
 What is Events?
 --------------------------------------
-Events is a script that you can bind async custom events into your javascript objects.
+Events is a script that you can bind and trigger custom events into your javascript objects.
 
 
 Dependencies
@@ -14,23 +14,24 @@ Usage
 Include Events.js in your project:
 
 ```javascript
-import Events from './Events.js';
+import Events from '@mowses/Events';
 ```
 
-Prototyping an object and defining its custom events
+Defining an object and its custom events:
 
 ```javascript
-Game.prototype = {
-    events: new Events([
+const Game = function ()
+{
+    this.events = new Events([
         'load game',
         'refresh game',
         'attack',
         'attacked'
-    ])
-};
+    ]);
+}
 ```
 
-No other events can be bind or triggered if not present in the array above.
+No other events can be bound or triggered if not present in the array above.
 
 
 Setting callbacks for the defined events:
@@ -39,24 +40,26 @@ Setting callbacks for the defined events:
 var game = new Game();
 
 game.events
-    .on(['load game', 'refresh game'], function() {
+    .on(['load game', 'refresh game'], function () {
 		console.log('game loaded or refreshed');
 	})
-	.on('attacked', function(say) {
-		console.log(say);
+    .on('attack', function (enemy, damage) {
+        enemy.hp -= damage;
+    })
+	.on('attacked', function(attacker) {
+		notification.send(`You have been attacked by ${attacker.name}`);
 	});
 ```
 
-Triggering your custom events
+Triggering your events:
 
 ```javascript
-// attack order!
-game.events.trigger('attack')
-
-// triggering an invalid event
+// example of triggering an invalid event
 game.events.trigger('invalid event');  // will throw a console warning
 
 // passing custom argument to event callback
-game.events.trigger('attacked', 'Ouch, that hurts!')
+game.events.trigger('attack', enemy, 50);
+
+game.events.trigger('attacked', enemy);
 ```
 

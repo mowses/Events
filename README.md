@@ -21,7 +21,7 @@ Usage
 Include Events.js in your project:
 
 ```javascript
-import Events from '@mowses/Events';
+import Events from '@mowses/events';
 ```
 
 Defining an object and its custom events:

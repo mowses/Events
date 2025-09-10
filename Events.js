@@ -43,8 +43,6 @@ const Events = function (supported_events) {
             let parent = this,
                 // create a wrapper for 'on' method
                 new_callback = function () {
-                    callback.apply(this, arguments);
-
                     // remove new_callback from events
                     [].forEach.call(arr_events, function (event) {
 
@@ -56,6 +54,10 @@ const Events = function (supported_events) {
                             return cb !== new_callback;
                         }, true);
                     });
+
+                    // execute the callback after removing new_callback
+                    // otherwise it may loop infinitely
+                    callback.apply(this, arguments);
                 };
 
             this.on(arr_events, new_callback);
